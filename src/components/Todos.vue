@@ -4,20 +4,23 @@
     <div v-for="t in pendingTodos" :key="t.id">
       {{ t.text }}
     </div>
-    <button @click="addTodo">AddTodo</button>
+    <button @click="addTodoLocal">AddTodo</button>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 import { ADD_TODO } from './../store/mutation-types'
 
 export default {
   name: 'Todos',
   props: {},
   methods: {
-    addTodo () {
-      this.$store.commit(ADD_TODO, {text:'new ToDo', done:false})
+    ...mapMutations([
+      ADD_TODO
+    ]),
+    addTodoLocal () {
+      this[ADD_TODO]({text:'new ToDo', done:false})
     }
   },
   computed: mapGetters([

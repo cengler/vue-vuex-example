@@ -7,16 +7,16 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 import { INCREMENT_COUNTER } from './../store/mutation-types'
 
 export default {
   name: 'Counter',
   props: {},
   methods: {
-    increment () {
-      this.$store.commit(INCREMENT_COUNTER)
-    }
+    ...mapMutations([
+      INCREMENT_COUNTER
+    ])
   },
   computed: mapState([
     'count'
