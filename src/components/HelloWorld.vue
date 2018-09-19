@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'HelloWorld',
   props: {
@@ -16,11 +18,10 @@ export default {
       this.$store.commit('increment')
     }
   },
-  computed: {
-    count () {
-      return this.$store.state.count
-    }
-  }
+  computed: mapState([
+    'count'
+  ])
+  
 }
 </script>
 
