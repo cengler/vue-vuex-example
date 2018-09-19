@@ -9,10 +9,8 @@
 import { mapState } from 'vuex'
 
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  },
+  name: 'Counter',
+  props: {},
   methods: {
     increment () {
       this.$store.commit('increment')
