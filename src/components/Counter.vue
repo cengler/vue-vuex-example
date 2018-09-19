@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>Counter</h2>
     <div>{{ count }}</div>
     <button @click="increment()" >Up counter</button>
   </div>

@@ -1,8 +1,10 @@
 <template>
   <div>
-    <div v-for="t in doneTodos" :key="t.id">
+    <h2>ToDo List</h2>
+    <div v-for="t in pendingTodos" :key="t.id">
       {{ t.text }}
     </div>
+    <button @click="addTodo">AddTodo</button>
   </div>
 </template>
 
@@ -13,9 +15,12 @@ export default {
   name: 'Todos',
   props: {},
   methods: {
+    addTodo () {
+      this.$store.commit('addTodo', {text:'new ToDo', done:false})
+    }
   },
   computed: mapGetters([
-    'doneTodos'
+    'pendingTodos'
   ])
   
 }
