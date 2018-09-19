@@ -8,13 +8,14 @@
 
 <script>
 import { mapState } from 'vuex'
+import { INCREMENT_COUNTER } from './../store/mutation-types'
 
 export default {
   name: 'Counter',
   props: {},
   methods: {
     increment () {
-      this.$store.commit('increment')
+      this.$store.commit(INCREMENT_COUNTER)
     }
   },
   computed: mapState([

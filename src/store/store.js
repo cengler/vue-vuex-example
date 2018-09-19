@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import {ADD_TODO, INCREMENT_COUNTER} from './mutation-types'
 
 Vue.use(Vuex) 
 
@@ -13,10 +14,10 @@ export const store = new Vuex.Store({
     ]
   },
   mutations: {
-    increment (state) {
+    [INCREMENT_COUNTER] (state) {
       state.count++
     },
-    addTodo(state, todo) {
+    [ADD_TODO] (state, todo) {
       state.lastTodoId++
       todo.id = state.lastTodoId
       state.todos.push(todo)

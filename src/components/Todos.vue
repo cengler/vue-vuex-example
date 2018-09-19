@@ -10,13 +10,14 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import { ADD_TODO } from './../store/mutation-types'
 
 export default {
   name: 'Todos',
   props: {},
   methods: {
     addTodo () {
-      this.$store.commit('addTodo', {text:'new ToDo', done:false})
+      this.$store.commit(ADD_TODO, {text:'new ToDo', done:false})
     }
   },
   computed: mapGetters([
