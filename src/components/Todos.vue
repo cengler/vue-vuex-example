@@ -9,14 +9,14 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import { ADD_TODO } from './../store/mutation-types'
 
 export default {
   name: 'Todos',
   props: {},
   methods: {
-    ...mapMutations([
+    ...mapActions([
       ADD_TODO
     ]),
     addTodoLocal () {

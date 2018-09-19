@@ -23,6 +23,13 @@ export const store = new Vuex.Store({
       state.todos.push(todo)
     }
   },
+  actions: {
+    [ADD_TODO] ({commit}, todo) {
+      setTimeout(() => {
+        commit(ADD_TODO, todo)
+      }, 1000)
+    }
+  },
   getters: { // computed and catched properties for stores
     pendingTodos: state => {
       return state.todos.filter(todo => !todo.done)
